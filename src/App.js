@@ -9,7 +9,7 @@ function App() {
     <div className="App">
      <HelloWorld />
      <WeatherCC status= {"sunny"} style={{backgroundColor: "yellow", color: "red"}} />
-     <WeatherFC status= {"rainy"} style={{backgroundColor: "pink", color: "green"}}/>
+     <WeatherFC status= {"rainy"} style={{backgroundColor: "blue", color: "green"}}/>
 
     </div>
   );
