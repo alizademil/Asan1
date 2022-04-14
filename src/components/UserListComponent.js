@@ -1,15 +1,25 @@
 import { Alert } from 'bootstrap';
 import React, { Component } from 'react'
 import { Table } from 'reactstrap'
+import FormComponent from './FormComponent';
 
 export default class UserListComponent extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            visible: false,
+        }
+        this.hide= this.hide.bind(this);
+    }
+
+    hide(){
+        this.setState({visible:false})
     }
     render() {
         return (
             <div className='container mt-5' >
-                <button className='btn btn-primary' >Add</button>
+                <button className='btn btn-primary' onClick={() => this.setState({ visible: true })} >Add</button>
+                <FormComponent visible={this.state.visible} hide={this.hide}/>
                 {this.props.users.length > 0 ? (<Table
                 >
                     <thead>
@@ -55,7 +65,7 @@ export default class UserListComponent extends Component {
 
                     </tbody>
                 </Table>) :
-                    (<Alert
+                    (<Alert className="mt-5"
                         color="warning"
                     >
                         There is no users

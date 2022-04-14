@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function HelloWorld() {
     const fullName = "Emil Alizade";
@@ -10,11 +10,11 @@ export default function HelloWorld() {
             <br />
             <span className="nameone" >Emil Alizade</span>
             <div>
-                <label for="name" >Ad</label>
-                <input type="text"id="name" ></input>
+                <label htmlFor="name" >Ad</label>
+                <input type="text" id="name" ></input>
             </div>
             <br />
-            <div style={{ fontSize: "50px"}}> React Lessons </div>
+            <div style={{ fontSize: "50px" }}> React Lessons </div>
             <br />
             <input type="text"  ></input>
             <br />
