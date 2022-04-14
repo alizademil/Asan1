@@ -1,3 +1,4 @@
+import { Alert } from 'bootstrap';
 import React, { Component } from 'react'
 import { Table } from 'reactstrap'
 
@@ -9,7 +10,7 @@ export default class UserListComponent extends Component {
         return (
             <div className='container mt-5' >
                 <button className='btn btn-primary' >Add</button>
-                <Table
+                {this.props.users.length > 0 ? (<Table
                 >
                     <thead>
                         <tr>
@@ -30,7 +31,7 @@ export default class UserListComponent extends Component {
                     <tbody>
                         {
                             this.props.users.map((user) => (
-                                <tr>
+                                <tr key={user.id}>
                                     <th scope="row"> {user.id}
                                     </th>
                                     <td>
@@ -53,8 +54,13 @@ export default class UserListComponent extends Component {
                             ))}
 
                     </tbody>
-                </Table>
+                </Table>) :
+                    (<Alert
+                        color="warning"
+                    >
+                        There is no users
+                    </Alert>)}
             </div>
-        )
+        );
     }
 }
