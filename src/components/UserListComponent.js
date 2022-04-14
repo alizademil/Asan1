@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { Table } from 'reactstrap'
 
 export default class UserListComponent extends Component {
-    constructor(props) {
-        super(props);
-    }
+
     render() {
         return (
             <div className='container mt-5' >
@@ -30,7 +28,7 @@ export default class UserListComponent extends Component {
                     <tbody>
                         {
                             this.props.users.map((user) => (
-                                <tr>
+                                <tr key = {user.id}>
                                     <th scope="row"> {user.id}
                                     </th>
                                     <td>

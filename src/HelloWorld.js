@@ -10,7 +10,7 @@ export default function HelloWorld() {
             <br />
             <span className="nameone" >Emil Alizade</span>
             <div>
-                <label for="name" >Ad</label>
+                <label htmlFor="name" >Ad</label>
                 <input type="text"id="name" ></input>
             </div>
             <br />
