@@ -33,6 +33,7 @@ export default class HomePages extends Component {
         };
         this.addUser = this.addUser.bind(this);
         this.deleteUser = this.deleteUser.bind(this);
+        this.editUser = this.editUser.bind(this);
     }
 
     addUser = ( name, surname, username) => {
@@ -58,7 +59,26 @@ export default class HomePages extends Component {
         })
         this.setState({ users });
         toast( '"${obj.name}" istifadeci silindi.');
+    }
 
+    editUser= (id,name,surname,username)=>{
+        if(id,name,surname,username){
+            const users =[...this.state.users];
+            let updatedUsers =users.map(user=>{
+               if(user.id===id){
+                user = {
+                    id:id,
+                    name:name,
+                    surname: surname,
+                    username:username,
+                };
+               }
+               return user;
+            })
+            this.setState({
+                users: updatedUsers,
+            })
+        }
     }
 
 
@@ -77,7 +97,7 @@ export default class HomePages extends Component {
 
                 </Navbar>
 
-                <UserListComponent  users = {this.state.users} addUser= {this.addUser} deleteUser = {this.deleteUser} />
+                <UserListComponent  users = {this.state.users} addUser= {this.addUser} deleteUser = {this.deleteUser} editUser = {this.editUser} />
             </div>
         )
     }
